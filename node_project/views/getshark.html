@@ -58,7 +58,7 @@
                             <th><%= shark.name %></th>
                             <th><%= shark.character %></th>
                             <td>
-                                <button class="btn btn-info" >Edit</button>
+                                <button class="btn btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
                                 <button class="btn btn-danger" >Delete</button>
                             </td>
                         </tr>
@@ -68,4 +68,37 @@
         </div>
     </div>
   </div>
+        <!-- Edit Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">EDIT</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <form action="{{ shark._id }}" method="post">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td><input type="text" name="name" value="{{ shark.name }}" /></td>
+                            </tr>
+                            <tr>
+                                <td>Character</td>
+                                <td><input type="text" name="price" value="{{ shark.character }}" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><button type="submit">Update</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </form>
+            </div>
+        </div>
+        </div> 
+        <!-- End of Edit Modal -->
 </html>

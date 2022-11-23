@@ -27,3 +27,30 @@ exports.list = function (req, res) {
              });
         });
 };
+
+exports.edit = function(req, res){
+        Shark.findOne({_id: req.params.id}).exec(function (err, product) {
+                if (err) { 
+                        console.log("Error:", err); return; 
+                }
+                res.render('getshark', {
+                        sharks: sharks
+             });
+        });
+};
+
+exports.update = function(req, res){
+        Shark.findByIdAndUpdate( req.params.id, {$set: {
+            name: req.body.name,
+            character: req.body.character
+        }}, { new: true },
+        function( err, shark){
+            if( err ){ 
+                console.log('Error: ', err); 
+                res.render('getshark', {
+                        sharks: sharks
+             });
+            }
+            res.redirect('/sharks/getshark' + shark._id);
+        });
+};
