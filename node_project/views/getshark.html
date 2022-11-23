@@ -62,7 +62,7 @@
                                     <th><%= shark.character %></th>
                                     <td>
                                         <a type="button" class="btnEditar btn btn-outline-primary">Edit</a>
-                                        <a href="/borrar/<%= shark._id %>" type="button" class="btn btn-outline-danger"></a>
+                                        <a href="/borrar/<%= shark._id %>" type="button" class="btn btn-outline-danger">Eliminar</a>
                                     </td>
                                 </tr>
                                 <% }); %>
@@ -72,4 +72,35 @@
         </div>
     </div>
   </div>
-  </html>
+  
+  <!-- Modal -->
+  <div id="modalShark" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/editar" method="POST">
+                <input name="id_editar" id="id_editar" type="text" hidden>
+            <div class="mb-3">
+                <label for="name_editar" class="col-form-label">Name:</label>
+                <input id="name_editar" name="name_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+                <label for="character_editar" class="col-form-label">Name:</label>
+                <input id="character_editar" name="character_editar" type="text" class="form-control" value="">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="js/code.js"></script>
+
+</html>
