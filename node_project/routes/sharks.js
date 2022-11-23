@@ -14,6 +14,7 @@ router.get('/getshark', function(req, res) {
     shark.list(req,res);
 });
 
-router.post('/editar', shark)
-
+router.post('/editar', function(req, res) {
+    shark.editar(req,res);
+});
 module.exports = router;

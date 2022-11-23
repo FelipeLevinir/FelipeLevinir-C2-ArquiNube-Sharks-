@@ -29,7 +29,7 @@ exports.list = function (req, res) {
         });
 };
 
-module.exports.editar = (req, res)=>{
+exports.editar = (req, res)=>{
         const id = req.body.id_editar
         const name = req.body.name_editar
         const character = req.body.character_editar
