@@ -49,16 +49,16 @@
               <div class="caption">Your Sharks</div>
                   
                     <table>
+                        <% sharks.forEach(function(shark) { %>
                         <tr>
                             <th>Name</th>
                             <th>Character</th>
                         </tr>
                         <tr>
-                            <% sharks.forEach(function(shark) { %>
-                                <th>Name: <%= shark.name %></th>
-                                <th>Character: <%= shark.character %></th>
-                            <% }); %>
+                            <th><%= shark.name %></th>
+                            <th><%= shark.character %></th>
                         </tr>
+                        <% }); %>
                     </table>
             </p>
         </div>
