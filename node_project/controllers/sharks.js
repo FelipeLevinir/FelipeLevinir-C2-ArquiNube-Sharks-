@@ -29,27 +29,27 @@ exports.list = function (req, res) {
 };
 
 exports.editar = (req, res)=>{
-        const id = req.body.id_editar
-        const name = req.body.name_editar
-        const character = req.body.character_editar
+        const id = req.body.id_editar;
+        const name = req.body.name_editar;
+        const character = req.body.character_editar;
         Shark.finByIdAndUpdate(id, {name, character}, (error,sharks)=>{
                 if(error){
                         return res.status(500).json({
                                 message: 'Error al actualizar un shark'
-                        })
+                        });
                 }
-                res.redirect('/sharks/getshark')
-        }) 
+                res.redirect('/sharks/getshark');
+        }); 
 };
 
 exports.borrar = (req, res)=>{
-        const id = req.params.id
+        const id = req.params.id;
         Shark.finByIdAndRemove(id, (error,sharks)=>{
                 if(error){
                         return res.status(500).json({
                                 message: 'Error al eliminar un shark'
-                        })
+                        });
                 }
-                res.redirect('/sharks/getshark')
-        }) 
+                res.redirect('/sharks/getshark');
+        }); 
 };
