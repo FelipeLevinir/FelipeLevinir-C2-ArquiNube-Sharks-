@@ -47,13 +47,13 @@
 	<div class="col-lg-4">
             <p>
               <div class="caption">Your Sharks</div>
-                  
                     <table>
-                        <% sharks.forEach(function(shark) { %>
                         <tr>
                             <th>Name</th>
                             <th>Character</th>
+                            <th>Acción</th>
                         </tr>
+                        <% sharks.forEach(function(shark) { %>
                         <tr>
                             <th><%= shark.name %></th>
                             <th><%= shark.character %></th>
