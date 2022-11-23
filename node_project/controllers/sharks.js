@@ -1,4 +1,5 @@
 const path = require('path');
+const sharks = require('../models/sharks');
 const Shark = require('../models/sharks');
 
 exports.index = function (req, res) {
@@ -28,29 +29,16 @@ exports.list = function (req, res) {
         });
 };
 
-exports.edit = function(req, res){
-        Shark.findOne({_id: req.params.id}).exec(function (err, product) {
-                if (err) { 
-                        console.log("Error:", err); return; 
+module.exports.editar = (req, res)=>{
+        const id = req.body.id_editar
+        const name = req.body.name_editar
+        const character = req.body.character_editar
+        Shark.finByIdAndUpdate(id, {name, character}, (error,sharks)=>{
+                if(error){
+                        return res.status(500).json({
+                                message: 'Error al actualizar un shark'
+                        })
                 }
-                res.render('getshark', {
-                        sharks: sharks
-             });
-        });
-};
-
-exports.update = function(req, res){
-        Shark.findByIdAndUpdate( req.params.id, {$set: {
-            name: req.body.name,
-            character: req.body.character
-        }}, { new: true },
-        function( err, shark){
-            if( err ){ 
-                console.log('Error: ', err); 
-                res.render('getshark', {
-                        sharks: sharks
-             });
-            }
-            res.redirect('/sharks/getshark' + shark._id);
-        });
+                res.redirect('/sharks/getshark')
+        }) 
 };
