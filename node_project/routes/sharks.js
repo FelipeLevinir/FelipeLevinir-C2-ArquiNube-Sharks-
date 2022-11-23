@@ -17,4 +17,9 @@ router.get('/getshark', function(req, res) {
 router.post('/editar', function(req, res) {
     shark.editar(req,res);
 });
+
+router.get('borrar/:id', function(req, res) {
+    shark.borrar(req,res);
+});
+
 module.exports = router;
