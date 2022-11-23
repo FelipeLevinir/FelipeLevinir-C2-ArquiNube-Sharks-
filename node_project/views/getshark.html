@@ -47,22 +47,28 @@
 	<div class="col-lg-4">
             <p>
               <div class="caption">Your Sharks</div>
-                    <table>
-                        <tr>
-                            <th>Name</th>
-                            <th>Character</th>
-                            <th>Acción</th>
-                        </tr>
-                        <% sharks.forEach(function(shark) { %>
-                        <tr>
-                            <th><%= shark.name %></th>
-                            <th><%= shark.character %></th>
-                            <td>
-                                <button class="btn btn-info" >Edit</button>
-                                <button class="btn btn-danger" >Delete</button>
-                            </td>
-                        </tr>
-                        <% }); %>
+                    <table id="tableShark">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Character</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% sharks.forEach(function(shark) { %>
+                                <tr>
+                                    <th><%= shark._id %></th>
+                                    <th><%= shark.name %></th>
+                                    <th><%= shark.character %></th>
+                                    <td>
+                                        <a type="button" class="btnEditar btn btn-outline-primary bi bi-pencil">Edit</a>
+                                        <a href="/borrar/<%= shark._id>" type="button" class="btn btn-outline-danger bi bi-trash"></a>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
                     </table>
             </p>
         </div>
