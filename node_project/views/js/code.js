@@ -1,11 +1,12 @@
 const modalShark = new boostrap.Modal(document.getElementById('modalShark'));
 
 const on = (element, event, selector, handler) => {
-    element.addEventListener(event, e => {
+    /*element.addEventListener(event, e => {
         if(e.target.closest(selector)){
             handler(e)
         };
-    });
+    });*/
+    console.log("entra!");
 };
 
 on(document, 'click', '.btnEditar', e =>{
