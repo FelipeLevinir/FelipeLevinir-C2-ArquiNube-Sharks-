@@ -18,7 +18,7 @@ router.post('/editar', function(req, res) {
     shark.editar(req,res);
 });
 
-router.get('borrar/:id', function(req, res) {
+router.get('/borrar/:id', function(req, res) {
     shark.borrar(req,res);
 });
 
