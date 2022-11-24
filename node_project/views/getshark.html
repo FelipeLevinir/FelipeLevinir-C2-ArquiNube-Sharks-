@@ -45,32 +45,30 @@
             </p>
         </div>
 	<div class="col-lg-4">
-            <p>
-              <div class="caption">Your Sharks</div>
-                    <table id="tableShark">
-                        <thead>
+            <div class="caption">Your Sharks</div>
+                <table id="tableShark">
+                    <thead>
+                        <tr>
+                            <th style="display: none;">ID</th>
+                            <th>Name</th>
+                            <th>Character</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% sharks.forEach(function(shark) { %>
                             <tr>
-                                <th style="display: none;">ID</th>
-                                <th>Name</th>
-                                <th>Character</th>
-                                <th>Acción</th>
+                                <td style="display: none;"><%= shark._id %></td>
+                                <td><%= shark.name %></td>
+                                <td><%= shark.character %></td>
+                                <td>
+                                    <a type="button" class="btnEditar btn btn-outline-primary">Edit</a>
+                                    <a href="/borrar/<%= shark._id %>" type="button" class="btn btn-outline-danger">Delet</a>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <% sharks.forEach(function(shark) { %>
-                                <tr>
-                                    <td style="display: none;"><%= shark._id %></td>
-                                    <td><%= shark.name %></td>
-                                    <td><%= shark.character %></td>
-                                    <td>
-                                        <a type="button" class="btnEditar btn btn-outline-primary">Edit</a>
-                                        <a href="/borrar/<%= shark._id %>" type="button" class="btn btn-outline-danger">Delet</a>
-                                    </td>
-                                </tr>
-                                <% }); %>
-                        </tbody>
-                    </table>
-            </p>
+                            <% }); %>
+                    </tbody>
+                </table>
         </div>
     </div>
   </div>
