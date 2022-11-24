@@ -1,4 +1,4 @@
-const modalShark = new boostrap.Modal(document.getElementById('modalShark'));
+const modalShark = new bootstrap.Modal(document.getElementById('modalShark'));
 
 const on = (element, event, selector, handler) => {
     element.addEventListener(event, e => {
