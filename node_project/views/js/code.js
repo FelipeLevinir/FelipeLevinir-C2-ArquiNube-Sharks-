@@ -1,4 +1,4 @@
-/*const modalShark = new boostrap.Modal(document.getElementById('modalShark'));
+const modalShark = new boostrap.Modal(document.getElementById('modalShark'));
 
 const on = (element, event, selector, handler) => {
     element.addEventListener(event, e => {
@@ -14,8 +14,8 @@ on(document, 'click', '.btnEditar', e =>{
     name_editar.value = fila.children[1].innerHTML
     character_editar.value = fila.children[2].innerHTML
     modalShark.show()
-});*/
+});
 
-document.getElementById('modalS').addEventListener('click',()=>{
-    console.log('click')
-})
+// document.getElementById('modalS').addEventListener('click',()=>{
+//     console.log('click')
+// })
