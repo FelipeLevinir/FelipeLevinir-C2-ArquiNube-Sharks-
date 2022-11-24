@@ -10,12 +10,9 @@ const on = (element, event, selector, handler) => {
 
 on(document, 'click', '.btnEditar', e =>{
     const fila = e.target.parentNode.parentNode
-    id_editar.value = fila.children[0].value
-    console.log(fila.children[0])
-    name_editar.value = fila.children[1].value
-    console.log(fila.children[1])
-    character_editar.value = fila.children[2].value
-    console.log(fila.children[2])
+    //id_editar.value = fila.children[0].innerHTML
+    name_editar.value = fila.children[1].innerHTML
+    character_editar.value = fila.children[2].innerHTML
     modalShark.show()
 });
 
