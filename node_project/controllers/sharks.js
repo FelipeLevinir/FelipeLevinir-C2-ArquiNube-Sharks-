@@ -38,7 +38,7 @@ exports.editar = function (req, res){
                                 message: 'Error al actualizar un shark'
                         });
                 }
-                res.redirect('/sharks/getshark')
+                res.redirect('/sharks/getshark');
         })
 }
 
@@ -50,6 +50,6 @@ exports.borrar = function (req, res){
                                 message: 'Error al eliminar un shark'
                         });
                 }
-                res.redirect('/sharks/getshark')
+                res.redirect('/sharks/getshark');
         })
 }
