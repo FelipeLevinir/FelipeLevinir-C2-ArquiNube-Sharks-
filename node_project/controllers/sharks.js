@@ -28,7 +28,7 @@ exports.list = function (req, res) {
         });
 };
 
-module.exports.editar = (req, res)=>{
+exports.editar = function (req, res){
         const id = req.body.id_editar
         const name = req.body.name_editar
         const character = req.body.character_editar
@@ -42,7 +42,7 @@ module.exports.editar = (req, res)=>{
         })
 }
 
-module.exports.borrar = (req, res)=>{
+exports.borrar = function (req, res){
         const id = req.params.id
         Shark.findByIdAndRemove(id, (error,sharks)=>{
                 if(error){
