@@ -63,7 +63,7 @@
                                 <td><%= shark.character %></td>
                                 <td>
                                     <a type="button" class="btnEditar btn btn-outline-primary">Edit</a>
-                                    <a href="/borrar/<%= shark._id %>" class="btn btn-outline-danger">Delet</a>
+                                    <a href="/sharks/borrar/<%= shark._id %>" class="btn btn-outline-danger">Delet</a>
                                 </td>
                             </tr>
                             <% }); %>
@@ -82,7 +82,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="/editar" method="post">
+          <form action="/sharks/editar" method="post">
                 <input name="id_editar" id="id_editar" type="text" hidden>
             <div class="mb-3">
                 <label for="name_editar" class="col-form-label">Name:</label>
